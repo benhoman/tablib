@@ -20,6 +20,7 @@ uninstalled_format_messages = {
     "xls": {"package_name": "xlrd and xlwt packages", "extras_name": "xls"},
     "xlsx": {"package_name": "openpyxl package", "extras_name": "xlsx"},
     "yaml": {"package_name": "pyyaml package", "extras_name": "yaml"},
+    "pdf": {"package_name": "reportlab package", "extras_name": "pdf"},
 }
 
 
@@ -110,6 +111,8 @@ class Registry:
         self.register('rst', 'tablib.formats._rst.ReSTFormat')
         if find_spec('tabulate'):
             self.register('cli', 'tablib.formats._cli.CLIFormat')
+        if find_spec('reportlab'):
+            self.register('pdf', 'tablib.formats._pdf.PDFFormat')
 
     def formats(self):
         for key, frm in self._formats.items():
