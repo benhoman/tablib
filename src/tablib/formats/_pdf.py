@@ -4,8 +4,8 @@ from io import BytesIO
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import landscape, letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
 import tablib
 
