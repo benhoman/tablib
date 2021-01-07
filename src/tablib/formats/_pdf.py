@@ -17,11 +17,12 @@ class PDFFormat:
     @classmethod
     def export_set(cls, dataset, pagesize=landscape(letter)):
         """Returns PDF representation of Dataset."""
-        stream = BytesIO()
+        flowables = []
         styles = getSampleStyleSheet()
+        stream = BytesIO()
         doc = SimpleDocTemplate(stream, pagesize=pagesize)
         data = dataset._package(dicts=False)
         t = Table(data)
-        doc.build([t])
-
+        flowables.append(t)
+        doc.build(flowables)
         return stream.getvalue()
