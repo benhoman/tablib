@@ -29,6 +29,7 @@ Output formats supported:
 - ODS (Sets)
 - CSV (Sets)
 - DBF (Sets)
+- PDF (Sets)
 
 Note that tablib *purposefully* excludes XML support. It always will. (Note: This is a
 joke. Pull requests are welcome.)
